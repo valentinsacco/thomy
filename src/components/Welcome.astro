@@ -1,0 +1,92 @@
+---
+import astroLogo from '../assets/astro.svg'
+import background from '../assets/background.svg'
+
+import IAPOSIcon from '../assets/obrassociales/iapos.svg'
+import OSDEIcon from '../assets/obrassociales/osde.svg'
+
+import Logo from '../assets/logo.svg'
+---
+
+<div id='max-w-screen'>
+    <img id='background' src={background.src} alt='' fetchpriority='high' />
+    <main>
+        <header
+            class='h-20 fixed top-0 right-0 left-0 flex flex-row justify-between items-center px-20 bg-[#373532] text-white'
+        >
+            <div>
+                <img src={Logo.src} class='h-20' />
+            </div>
+            <div>
+                <a
+                    class='text-sm cursor-pointer font-light text-white'
+                    href='https://google.com'
+                >
+                    Turnos
+                </a>
+            </div>
+        </header>
+        <section class='h-screen grid place-items-center'>
+            <div class='flex flex-col items-center'>
+                <h1 class='text-7xl font-extrabold m-0 p-0'>
+                    Dr. Thomas Alvarado
+                </h1>
+                <span class='text-lg font-medium mt-10'>Médico Oftamólogo</span>
+                <span class='text-sm font-light mt-2'>MP. 9062 - MN. 177716</span>
+                <!-- <button class='h-10 px-6 border-black bg-black rounded-full mt-20'>
+                    <a
+                        class='h-full w-full text-white font-extralight text-lg'
+                        href='https://google.com'
+                    >
+                        Socilita tu turno
+                    </a>
+                </button> -->
+                <a href='/products' class='mt-16'
+                    ><button
+                        class='text-white px-6 py-3 border-0 rounded-full font-semibold text-normal bg-[#373532] flex flex-row gap-1 items-center cursor-pointer hover:shadow-xl transition-all'
+                        >Solicita tu turno
+                    </button></a
+                >
+            </div>
+        </section>
+        <section class='grid grid-cols-3 px-5 md:px-20 gap-10'>
+            <div class='h-screen text-center col-span-1 w-full items-center flex flex-col'>
+                <h2 class='text-3xl font-bold'>OBRA SOCIALES</h2>
+                <ul class="list-none text-left mt-4">
+                    <li class='text-md font-light mt-4'>
+                        <img src={IAPOSIcon.src} class='inline-block h-10 mr-2' />
+                        <span class='text-lg font-light'>IAPOS</span>
+                    </li>
+                    <li class='text-md font-light mt-4'>
+                        <img src={OSDEIcon.src} class='inline-block h-10 mr-2' />
+                        <span class='text-lg font-light'>OSDE</span>
+                    </li>
+                </ul>
+            </div>
+            <div class='h-screen text-center col-span-1 w-full'>
+                <h2 class='text-3xl font-bold'>HORARIOS DE ATENCIÓN</h2>
+                <p class='text-lg font-light mt-4'>
+                    IAPOS, OSPEDYC, OSPIL, OSPIM, OSPES, OSPESI,
+                </p>
+            </div>
+            <div class='h-screen text-center col-span-1 w-full'>
+                <h2 class='text-3xl font-bold'>UBICACIONES</h2>
+                <p class='text-lg font-light mt-4'>
+                    IAPOS, OSPEDYC, OSPIL, OSPIM, OSPES, OSPESI,
+                </p>
+            </div>
+        </section>
+    </main>
+</div>
+
+<style>
+    #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        filter: blur(100px);
+    }
+</style>
