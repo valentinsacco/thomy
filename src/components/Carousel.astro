@@ -1,0 +1,104 @@
+---
+import Image1 from '../assets/image-carousel-1.svg'
+
+const images = [
+    Image1.src,
+    'https://via.placeholder.com/800x400/00ff00/ffffff?text=Image+2',
+    'https://via.placeholder.com/800x400/0000ff/ffffff?text=Image+3'
+]
+---
+
+<div class='carousel-container'>
+    <div class='carousel'>
+        {
+            images.map((src) => (
+                <div class='carousel-item'>
+                    <img src={src} alt='Carousel image' />
+                </div>
+            ))
+        }
+    </div>
+    <button class='carousel-prev'>&larr;</button>
+    <button class='carousel-next'>&rarr;</button>
+</div>
+
+<style>
+    .carousel-container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .carousel-prev {
+        left: 10px;
+    }
+
+    .carousel-next {
+        right: 10px;
+    }
+</style>
+
+<script>
+    const carousel = document.querySelector('.carousel')
+    const prevButton = document.querySelector('.carousel-prev')
+    const nextButton = document.querySelector('.carousel-next')
+    const items = document.querySelectorAll('.carousel-item')
+    let currentIndex = 0
+    const totalItems = items.length
+
+    function showSlide(index: number) {
+        if (!carousel) return;
+        if (index >= totalItems) {
+            currentIndex = 0
+        } else if (index < 0) {
+            currentIndex = totalItems - 1
+        } else {
+            currentIndex = index
+        }
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`
+    }
+
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', () => {
+            showSlide(currentIndex - 1)
+        })
+
+        nextButton.addEventListener('click', () => {
+            showSlide(currentIndex + 1)
+        })
+    }
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+        showSlide(currentIndex + 1)
+    }, 5000)
+</script>
