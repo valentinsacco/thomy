@@ -2,12 +2,15 @@
 import astroLogo from '../assets/astro.svg'
 import background from '../assets/background.svg'
 
-import Imagen from '../assets/image-carousel-1.svg'
+import Imagen from '../assets/image-carousel-1.jpg'
 import IAPOSIcon from '../assets/obrassociales/iapos.svg'
 import OSDEIcon from '../assets/obrassociales/osde.svg'
 
 import Logo from '../assets/logo.svg'
 import Carousel from './Carousel.astro'
+import WhatsappIcon from '../assets/whatsapp.svg'
+import InstagramIcon from '../assets/instagram.svg'
+import LocationIcon from '../assets/location.svg'
 ---
 
 <div id='max-w-screen'>
@@ -68,40 +71,57 @@ import Carousel from './Carousel.astro'
         >
             <div class='h-fit col-span-1 w-full'>
                 <h2 class='text-3xl font-bold'>CONTACTO</h2>
-                <a
+               <div class="flex flex-col gap-0.5">
+                 <a
                     href='https://wa.me/message/T7BBDQVGT624I1'
-                    class='block text-lg pl-6 font-light mt-4'
+                    class='flex flex-row items-center text-lg pl-6 font-light mt-4'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    title='Enviar mensaje por WhatsApp'
                 >
+                    <img src={WhatsappIcon.src} class='inline-block h-6 mr-2' />
                     +54 342 569-2483
                 </a>
+                <a
+                    href='https://www.instagram.com/drthomasalvarado/'
+                    class='flex flex-row items-center text-lg pl-6 font-light mt-4'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    title='Enviar mensaje por WhatsApp'
+                >
+                    <img src={InstagramIcon.src} class='inline-block h-6 mr-2' />
+                    @drthomasalvarado
+                </a>
+               </div>
             </div>
             <div class='h-fit col-span-1 w-full text-gray-100'>
                 <h2 class='text-3xl font-bold'>UBICACIÓN</h2>
-                <a href=''>
-                    <p class='text-lg pl-6 font-light mt-4'>
-                        <!-- <img
-                        src={astroLogo.src}
-                        class='inline-block h-10 mr-2'
-                        /> -->
-                        Salta 2131, Santa Fe, Argentina.
-                    </p>
+                <a
+                    href='https://maps.app.goo.gl/5KxdbcQrmB8eEosy8'
+                    class='flex flex-row items-center text-lg pl-6 font-light mt-4'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    title='Ver en Google Maps'
+                >
+                    <img src={LocationIcon.src} class='inline-block h-6 mr-2' />
+                    Salta 2131, Santa Fe, Argentina.
                 </a>
             </div>
             <div class='h-fit col-span-1 row-span-1 w-full flex flex-col'>
                 <h2 class='text-3xl font-bold'>OBRA SOCIALES</h2>
                 <ul class='list-none pl-6 text-left mt-4 gap-2.5 flex flex-col'>
                     <li class='text-md font-light'>
-                        <!-- <img
+                        <img
                             src={IAPOSIcon.src}
                             class='inline-block h-10 mr-2 rounded-full bg-white p-1'
-                        /> -->
+                        />
                         <span class='text-lg font-light'>IAPOS</span>
                     </li>
                     <li class='text-md font-light'>
-                        <!-- <img
+                        <img
                             src={OSDEIcon.src}
                             class='inline-block h-10 mr-2 rounded-full bg-white p-1'
-                        /> -->
+                        />
                         <span class='text-lg font-light'>OSDE</span>
                     </li>
                 </ul>
