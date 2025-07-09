@@ -39,6 +39,7 @@ const InfoSection = () => {
                         <img
                             src={WhatsappIcon.src}
                             className='inline-block h-6 mr-2'
+                            alt='WhatsApp Icon'
                         />
                         +54 342 569-2483
                     </a>
@@ -52,6 +53,7 @@ const InfoSection = () => {
                         <img
                             src={InstagramIcon.src}
                             className='inline-block h-6 mr-2'
+                            alt='Instagram Icon'
                         />
                         @drthomasalvarado
                     </a>
@@ -83,6 +85,7 @@ const InfoSection = () => {
                         <img
                             src={LocationIcon.src}
                             className='inline-block h-6 mr-2'
+                            alt='Location Icon'
                         />
                         Salta 2538, Santa Fe, Argentina.
                     </a>
@@ -108,6 +111,7 @@ const InfoSection = () => {
                         <img
                             src={IAPOSIcon.src}
                             className='inline-block h-10 mr-2 rounded-full bg-white p-1'
+                            alt='IAPOS Icon'
                         />
                         <span className='text-lg font-light'>IAPOS</span>
                     </li>
@@ -115,6 +119,7 @@ const InfoSection = () => {
                         <img
                             src={OSDEIcon.src}
                             className='inline-block h-10 mr-2 rounded-full bg-white p-1'
+                            alt='OSDE Icon'
                         />
                         <span className='text-lg font-light'>OSDE</span>
                     </li>
